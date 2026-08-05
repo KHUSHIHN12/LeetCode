@@ -1,0 +1,27 @@
+class Solution {
+    public static int[][] merge(int[][] intervals) {
+         if (intervals.length <= 1) return intervals;
+
+        // Sort intervals by start time
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+
+        List<int[]> merged = new ArrayList<>();
+
+        for (int[] interval : intervals) {
+            // If list is empty or no overlap, add the interval
+            if (merged.isEmpty() || merged.get(merged.size() - 1)[1] < interval[0]) {
+                merged.add(interval);
+            } else {
+                // There is overlap, so merge
+                merged.get(merged.size() - 1)[1] = 
+                    Math.max(merged.get(merged.size() - 1)[1], interval[1]);
+            }
+        }
+
+        // Convert List to array
+        return merged.toArray(new int[merged.size()][]);
+    }
+
+}
+        
+    
