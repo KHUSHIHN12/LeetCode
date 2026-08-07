@@ -1,5 +1,5 @@
 class Solution {
-    public String minWindow(String s, String t) {
+    public String minWindow(String s, String t) {   //Sliding window with two pointers
         
         int[] sWin=new int[256];
         int[] tWin=new int[256];
