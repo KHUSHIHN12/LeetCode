@@ -11,12 +11,14 @@ class Solution {
             sum+=nums[i];
             reminder=sum%k;
 
-            if(map.containsKey(reminder) && i-map.get(reminder)>=2)
+            if(map.containsKey(reminder)){
+            if(i-map.get(reminder)>=2)
             {
                 return true;
             }
-            if(!map.containsKey(reminder))
-            {
+            }
+            else{
+            
             map.put(reminder,i);
             }
             
