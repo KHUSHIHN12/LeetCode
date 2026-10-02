@@ -2,7 +2,7 @@ class Solution {
     public String reverseWords(String s) {
 
     
-    String result="";
+    StringBuilder result=new StringBuilder();
     String[] words=s.split(" ");
 
     for(int i=0;i<words.length;i++)
@@ -11,15 +11,15 @@ class Solution {
 
             for(int j=word.length()-1;j>=0;j--)
             {
-                 result=result+word.charAt(j);  
+                 result.append(word.charAt(j));  
             }
 
             if(i<words.length-1)
             {
-                result=result+" ";
+                result.append(" ");
             }
         }
-        return result;
+        return result.toString();
     }
    
         
